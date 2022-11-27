@@ -23,7 +23,7 @@ const images = [
     },
 ];
 
-const markup = images.map(image => `<li><img src= ${image.url} alt=${image.al}></li>`);
+const markup = images.map(image => `<li><img src= ${image.url} alt=${image.alt}></li>`);
 
 console.log(markup);
 

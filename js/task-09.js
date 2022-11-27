@@ -15,12 +15,12 @@ function getRandomHexColor() {
 }
 
 const button = document.querySelector('.change-color');
-const span = document.querySelector('.color')
+const span = document.querySelector('.color');
 
 button.addEventListener('click', onButtonClick);
 
-function onButtonClick(){
-  const bodyColor = getRandomHexColor();
-  document.body.style.backgroundColor =bodyColor;
-  span.textContent = bodyColor;
+function onButtonClick() {
+    const bodyColor = getRandomHexColor();
+    document.body.style.backgroundColor = bodyColor;
+    span.textContent = bodyColor;
 }
