@@ -1,5 +1,6 @@
-console.log(document);
+// console.log(document);
 // Завдання 1
+
 // Порахує і виведе в консоль кількість категорій в ul#categories, тобто елементів li.item.
 
 // 1 спосіб

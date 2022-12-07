@@ -10,6 +10,6 @@ const textSpan = document.querySelector('#text');
 rangeInput.addEventListener('input', onRangeInputChange);
 
 function onRangeInputChange(event) {
-    //console.log(event.currentTarget.value);
+    console.log(event.currentTarget.value);
     textSpan.style.fontSize = event.currentTarget.value + 'px';
 }

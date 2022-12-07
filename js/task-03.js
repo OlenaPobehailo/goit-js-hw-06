@@ -23,9 +23,11 @@ const images = [
     },
 ];
 
-const markup = images.map(image => `<li><img src= ${image.url} alt=${image.alt}></li>`);
+const markup = images.map(
+    image => `<li class = "list"><img src= ${image.url} alt=${image.alt} height="400" class = "img"></li>`
+).join('');
 
-console.log(markup);
+// console.log(markup);
 
 const galleryEl = document.querySelector('.gallery');
 galleryEl.classList.add('flex');

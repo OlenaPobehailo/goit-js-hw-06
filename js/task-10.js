@@ -18,21 +18,22 @@
 Створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
 */
 
-function getRandomHexColor() {
-    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
+const boxesEl = document.querySelector('#boxes');
+const inputEl = document.querySelector('input[type="number"]');
+const buttonCreate = document.querySelector('button[data-create]');
+const buttonDestroy = document.querySelector('button[data-destroy]');
+
+buttonCreate.addEventListener('click', onButtonCreateClick);
+buttonDestroy.addEventListener('click', onButtonDestroyClick);
+inputEl.addEventListener('input', onInputChange);
 
 function onButtonCreateClick() {
-    console.log('onButtonCreateClick');
     const divQuantity = inputEl.value;
-    console.log(divQuantity);
     createBoxes(divQuantity);
 }
 
 function onButtonDestroyClick(event) {
-    console.log('onButtonDestroyClick');
-    boxesEl.innerHTML='';
-
+    boxesEl.innerHTML = '';
 }
 
 function onInputChange(event) {
@@ -44,32 +45,19 @@ function createBoxes(amount) {
 
     for (let i = 0; i < amount; i += 1) {
         let currentSize = size + i * 10 + 'px';
-        console.log(currentSize);
         const currentColor = getRandomHexColor();
-        console.log(currentColor);
-
-        // let currentDiv = `<div style="width: ${currentSize}; height: ${currentSize}; background-color = '${currentColor}';"></div>`;   
-
-        //boxesEl.innerHTML += currentDiv;
 
         let currentDiv = document.createElement('div');
+
         currentDiv.style.width = currentSize;
         currentDiv.style.height = currentSize;
         currentDiv.style.backgroundColor = currentColor;
 
         boxesEl.appendChild(currentDiv);
-        console.log(currentDiv);
     }
-    console.log(boxesEl);
-
-    //boxesEl.appendChild(boxesEl);
+    // console.log(boxesEl);
 }
 
-const boxesEl = document.querySelector('#boxes');
-const inputEl = document.querySelector('input[type="number"]');
-const buttonCreate = document.querySelector('button[data-create]');
-const buttonDestroy = document.querySelector('button[data-destroy]');
-
-buttonCreate.addEventListener('click', onButtonCreateClick);
-buttonDestroy.addEventListener('click', onButtonDestroyClick);
-inputEl.addEventListener('input', onInputChange);
+function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}

@@ -16,6 +16,8 @@
 const validationInput = document.querySelector('#validation-input');
 const dataLength = Number(validationInput.dataset.length);
 
+validationInput.addEventListener('blur', onValidationInputBlur);
+
 function onValidationInputBlur(event) {
     if (event.currentTarget.value.length === dataLength) {
         validationInput.classList.add('valid');
@@ -25,5 +27,3 @@ function onValidationInputBlur(event) {
         validationInput.classList.remove('valid');
     }
 }
-
-validationInput.addEventListener('blur', onValidationInputBlur);

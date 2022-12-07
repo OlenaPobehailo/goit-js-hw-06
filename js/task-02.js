@@ -27,10 +27,8 @@ const elements = ingredients.map((ingredient) => {
     return itemEl;
 })
 
-console.log(elements);
+// console.log(elements);
 
 const ingredientsEl = document.querySelector('#ingredients');
-
-console.log(ingredientsEl);
 
 ingredientsEl.append(...elements);
